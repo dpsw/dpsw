@@ -40,6 +40,33 @@ try {
         $view->setViewsDir('../app/views/');
         return $view;
     });
+    
+    $di->set('view', function() use ($config) {
+
+		$view = new \Phalcon\Mvc\View();
+
+		$view->setViewsDir(__DIR__ . $config->application->viewsDir);
+
+		$view->registerEngines(array(
+			".volt" => 'volt'
+		));
+
+		return $view;
+	});
+        
+    /**
+     * Setting up volt
+     */
+    $di->set('volt', function($view, $di) {
+
+        $volt = new \Phalcon\Mvc\View\Engine\Volt($view, $di);
+
+//        $volt->setOptions(array(
+//            "compiledPath" => "../cache/volt/"
+//        ));
+
+        return $volt;
+    }, true);
 
     //Handle the request
     $application = new \Phalcon\Mvc\Application();
