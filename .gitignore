@@ -1,2 +1,5 @@
 /nbproject/private/
 /cache/*
+composer.json
+composer.lock
+/vendor/*
