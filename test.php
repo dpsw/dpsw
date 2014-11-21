@@ -1,0 +1,16 @@
+<?php
+class test{
+    public function beforeCreate()
+
+    {
+        //Set the creation date
+        $this->created_time = date('Y-m-d H:i:s');
+    }
+
+    public function beforeUpdate()
+
+    {
+        //Set the modification date
+        $this->last_update = date('Y-m-d H:i:s');
+    }
+}
