@@ -81,7 +81,7 @@ class User extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    protected $role_id;
+    protected $role;
 
     /**
      * Method to set the value of field user_id
@@ -232,7 +232,7 @@ class User extends \Phalcon\Mvc\Model
      * @param string $timestamp
      * @return $this
      */
-    public function setTimestamp($timestamp)
+    private function setTimestamp($timestamp)
     {
         $this->timestamp = $timestamp;
 
@@ -240,14 +240,14 @@ class User extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field role_id
+     * Method to set the value of field role
      *
-     * @param string $role_id
+     * @param string $role
      * @return $this
      */
-    public function setRoleId($role_id)
+    public function setRoleId($role)
     {
-        $this->role_id = $role_id;
+        $this->role = $role;
 
         return $this;
     }
@@ -373,13 +373,13 @@ class User extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field role_id
+     * Returns the value of field role
      *
      * @return string
      */
-    public function getRoleId()
+    public function getRole()
     {
-        return $this->role_id;
+        return $this->role;
     }
 
     /**
@@ -407,6 +407,7 @@ class User extends \Phalcon\Mvc\Model
     public function initialize()
     {
         $this->setSource('User');
+        $this->hasMany('user_id', 'Shop', 'seller_id');
     }
 
     /**
@@ -427,8 +428,27 @@ class User extends \Phalcon\Mvc\Model
             'created_time' => 'created_time', 
             'last_update' => 'last_update', 
             'timestamp' => 'timestamp', 
-            'role_id' => 'role_id'
+            'role' => 'role'
         );
+    }
+
+    public function getShops($parameters=null)
+    {
+        return $this->getRelated('Shop', $parameters);
+    }
+
+
+
+    public function beforeCreate()
+    {
+        //Set the creation date
+        $this->created_time = date('Y-m-d H:i:s');
+    }
+
+    public function beforeUpdate()
+    {
+        //Set the modification date
+        $this->last_update = date('Y-m-d H:i:s');
     }
 
 }
