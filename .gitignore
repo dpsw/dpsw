@@ -3,3 +3,5 @@
 composer.json
 composer.lock
 /vendor/*
+/app/config/config.ini
+/app/config/config.php
