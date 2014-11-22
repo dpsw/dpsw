@@ -4,7 +4,8 @@
 {% for shop in Shops %}
 	{{ shop.getName() }}
 	<br>
-	{% for product in shop.getProduct() %}
+	{% set products = shop.getProduct() %}
+	{% for product in products %}
 		&ensp;	{{ product.getName() }}
 	{% endfor %}
 	<br>
