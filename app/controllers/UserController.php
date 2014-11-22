@@ -1,11 +1,11 @@
 <?php
 
-class IndexController extends ControllerBase
+class UserController extends ControllerBase
 {
 
     public function indexAction()
     {
- 		
+
     }
 
 }
