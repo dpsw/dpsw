@@ -1,5 +1,11 @@
 
 $(document).ready(function(e) {
+	//		MY JS
+	$('#btn-registration').click(function(){
+		$('#login-form').submit();
+	});
+
+	//		NOT MY JS
 	$('.with-hover-text, .regular-link').click(function(e){
 		e.stopPropagation();
 	});
