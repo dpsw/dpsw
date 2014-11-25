@@ -37,6 +37,7 @@
 	
 	<!-- === MAIN Background === -->
 	<div class="slide story" id="slide-1" data-slide="1">
+		{{ this.flash.output() }}
 		<div class="container">
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-6">
@@ -48,7 +49,7 @@
 				<div class="col-5">
 					<div class="form-wrap form_login">
 						<h4 class="font-thin login-header-align">Вступайте в <span >наш клуб</span></h4>  
-						{{ form('index/checkregistrationform', 'method': 'post', 'id' : 'login-form') }}
+						{{ form('user/registration', 'method': 'post', 'id' : 'login-form') }}
 
 		                    <!--form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off"-->
 

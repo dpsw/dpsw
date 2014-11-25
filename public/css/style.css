@@ -715,3 +715,37 @@ body {
 	padding-top: 10px;
 	float: right;
 }
+
+
+/* FLASH MESSAGE*/
+
+.flash-message {
+	box-sizing: border-box;
+	padding: 15px;
+	background-color: #dff0d8;
+	margin: 0 0 10px;
+	color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.flash-message.success{
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+.flash-message.error{
+	background-color: #D52020;
+	color: #1D0707;
+}
+
+.flash-message.notice{
+	background-color: #3366FF;
+	color: #fff;
+}
+
+.flash-message.warning{
+	background-color: #FFCC66;
+	color: #000;
+}

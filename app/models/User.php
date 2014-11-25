@@ -27,6 +27,12 @@ class User extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    protected $password;
+
+    /**
+     *
+     * @var string
+     */
     protected $email;
 
     /**
@@ -118,6 +124,19 @@ class User extends \Phalcon\Mvc\Model
     public function setSurname($surname)
     {
         $this->surname = $surname;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field surname
+     *
+     * @param string $surname
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
 
         return $this;
     }
@@ -283,6 +302,16 @@ class User extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field surname
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
      * Returns the value of field email
      *
      * @return string
@@ -385,21 +414,21 @@ class User extends \Phalcon\Mvc\Model
     /**
      * Validations and business logic
      */
-    public function validation()
-    {
+    // public function validation()
+    // {
 
-        $this->validate(
-            new Email(
-                array(
-                    'field'    => 'email',
-                    'required' => true,
-                )
-            )
-        );
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-    }
+    //     $this->validate(
+    //         new Email(
+    //             array(
+    //                 'field'    => 'email',
+    //                 'required' => true,
+    //             )
+    //         )
+    //     );
+    //     if ($this->validationHasFailed() == true) {
+    //         return false;
+    //     }
+    // }
 
     /**
      * Initialize method for model.
@@ -418,7 +447,8 @@ class User extends \Phalcon\Mvc\Model
         return array(
             'user_id' => 'user_id', 
             'name' => 'name', 
-            'surname' => 'surname', 
+            'surname' => 'surname',
+            'password' => 'password', 
             'email' => 'email', 
             'vk_id' => 'vk_id', 
             'facebook_id' => 'facebook_id', 
@@ -442,7 +472,10 @@ class User extends \Phalcon\Mvc\Model
     public function beforeCreate()
     {
         //Set the creation date
+        $this->is_subscription = 'N';
+        $this->is_ban = 'N';
         $this->created_time = date('Y-m-d H:i:s');
+        $this->last_update = date('Y-m-d H:i:s');
     }
 
     public function beforeUpdate()

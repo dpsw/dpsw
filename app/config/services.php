@@ -2,11 +2,13 @@
 
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Mvc\View;
+use Phalcon\Crypt;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Flash\Session as Flash;
 
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
@@ -88,3 +90,18 @@ $di->set('security', function(){
 
     return $security;
 }, true);
+
+$di->set('crypt', function () use ($config) {
+    $crypt = new Crypt();
+    $crypt->setKey($config->application->cryptSalt);
+    return $crypt;
+});
+
+$di->set('flash', function () {
+    return new Flash(array(
+        'error'   => 'flash-message error',
+        'notice'  => 'flash-message notice',
+        'success' => 'flash-message success',
+        'warning' => 'flash-message warning',
+    ));
+});

@@ -1,5 +1,8 @@
 <?php
 
+use Magandi\Forms\RegistForm;
+
+
 class UserController extends ControllerBase
 {
 
@@ -10,30 +13,31 @@ class UserController extends ControllerBase
 
     public function registrationAction()
     {
-    	if ($this->request->isPost() ) {
-    		if ($this->security->checkToken()) {
-                    //Токен верный
-    			echo "token good";
-    			die();
-        	}
-        	if ($form->isValid($this->request->getPost()) == false) {
+        $form = new RegistForm();
+        if ($this->request->isPost()) {
+            if ($form->isValid($this->request->getPost()) == false) {
                 foreach ($form->getMessages() as $message) {
-                    echo $message;
+                    $this->flash->error($message);
                 }
             }
-            // Доступ к POST данным
-            $name = $this->request->getPost("username");
-            $email = $this->request->getPost("email");
-            $password = $this->request->getPost("password");
-            var_dump($name);
-            var_dump($email);
-            var_dump($password);
-            die();
+            else{
+                $user = new User();
+                $user->assign(array(
+                    'name' => $this->request->getPost('username'),
+                    'email' => $this->request->getPost('email'),
+                    'password' => $this->security->hash($this->request->getPost('password'))
+                ));
+                if ($user->save()) {
+                    echo 'regist';
+                    die();
+                }
+            }
         }
-        else{
-        	echo "where params??";
-        	die();
-        }
+        return $this->response->redirect('');
+        // $this->dispatcher->forward(array(
+        //     "controller" => "index",
+        //     "action" => "index"
+        // ));
     }
 
 }
