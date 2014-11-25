@@ -474,6 +474,7 @@ class User extends \Phalcon\Mvc\Model
         //Set the creation date
         $this->is_subscription = 'N';
         $this->is_ban = 'N';
+        $this->money = 0.0;
         $this->created_time = date('Y-m-d H:i:s');
         $this->last_update = date('Y-m-d H:i:s');
     }

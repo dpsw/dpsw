@@ -54,37 +54,39 @@
 		                    <!--form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off"-->
 
 		                        <div class="form-group">
-		                        <?php echo $regist_form->render("username", array(
-									    'type' => 'name',
-									    'placeholder' => 'Ваше имя',
-									    'id' => 'name',
-									    'class'	=> 'form-control'
-									)) ?>
+								{{ regist_form.render('username', [
+										'type': 'name',
+										'placeholder': 'Ваше имя',
+										'id': 'name',
+										'class': 'form-control'
+										]) 
+									}}		
 		                            <!-- <input type="name" name="name" id="name" class="form-control" placeholder="Ваше имя"> -->
 		                        </div>
 		                        <div class="form-group">
-			                        <?php echo $regist_form->render("email", array(
-									    'type' => 'email',
-									    'placeholder' => 'Email',
-									    'id' => 'email',
-									    'class'	=> 'form-control'
-									)) ?>
+								{{ regist_form.render('email', [
+										'type': 'email',
+										'placeholder': 'Email',
+										'id': 'email',
+										'class': 'form-control'
+										]) 
+									}}	
 		                            <!-- <input type="email" name="email" id="email" class="form-control" placeholder="Email"> -->
 		                        </div>
 		                        <div class="form-group">
-		                        <?php echo $regist_form->render("password", array(
-									    'type' => 'password',
-									    'placeholder' => 'Пароль',
-									    'id' => 'password',
-									    'class'	=> 'form-control'
-									)) ?>
+								{{ regist_form.render('password', [
+										'type': 'password',
+										'placeholder': 'Пароль',
+										'id': 'password',
+										'class': 'form-control'
+										]) 
+									}}	
 		                            <!-- <input type="password" name="password" id="password" class="form-control" placeholder="Пароль"> -->
 		                        </div>
-		                        <?php // echo $regist_form->render("csrf") ?>
 {#		                        <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
 		                                value="<?php echo $this->security->getToken() ?>"/>
 		                                #}
-                                {{ regist_form.render('csrf', ['value': security.getToken()]) }}
+                                {{ regist_form.render('csrf', ['value': security.getSessionToken()]) }}
 		                        <button type="submit" id="btn-registration" class="btn btn-custom btn-lg btn-block" >Зарегестрироваться
 		                        </button>
 		                    </form>

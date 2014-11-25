@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 use Magandi\Forms\RegistForm;
 
@@ -31,13 +31,10 @@ class UserController extends ControllerBase
                     echo 'regist';
                     die();
                 }
+                $this->flash->error($user->getMessages());
             }
         }
         return $this->response->redirect('');
-        // $this->dispatcher->forward(array(
-        //     "controller" => "index",
-        //     "action" => "index"
-        // ));
     }
 
 }

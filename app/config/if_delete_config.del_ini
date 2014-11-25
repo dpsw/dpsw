@@ -1,0 +1,19 @@
+s[database]
+adapter  = Mysql
+host     = localhost
+username = root
+password = 1234qwer
+name     = magandi
+
+[application]
+controllersDir = /../app/controllers/
+modelsDir      = /../app/models/
+viewsDir       = /../app/views/
+pluginsDir     = /../app/plugins/
+libraryDir     = /../app/library/
+baseUri        = /
+
+[metadata]
+adapter = "Apc"
+suffix = my-suffix
+lifetime = 86400

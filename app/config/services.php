@@ -81,15 +81,15 @@ $di->set('session', function () {
     return $session;
 });
 
-$di->set('security', function(){
+// $di->set('security', function(){
 
-    $security = new Phalcon\Security();
+//     $security = new Phalcon\Security();
 
-    //Устанавливаем фактор хеширования в 12 раундов
-    $security->setWorkFactor(12);
+//     //Устанавливаем фактор хеширования в 12 раундов
+// //    $security->setWorkFactor(12);
 
-    return $security;
-}, true);
+//     return $security;
+// }, true);
 
 $di->set('crypt', function () use ($config) {
     $crypt = new Crypt();
