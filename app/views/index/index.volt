@@ -80,7 +80,7 @@
 									)) ?>
 		                            <!-- <input type="password" name="password" id="password" class="form-control" placeholder="Пароль"> -->
 		                        </div>
-		                        <?php // echo $regist_form->render("csrf") ?>
+		                        <?php // echo $regist_form->render("csrf") ?>	
 {#		                        <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
 		                                value="<?php echo $this->security->getToken() ?>"/>
 		                                #}
@@ -88,6 +88,12 @@
 		                        <button type="submit" id="btn-registration" class="btn btn-custom btn-lg btn-block" >Зарегестрироваться
 		                        </button>
 		                    </form>
+		                    	<div class="more_regist_methods">
+		                    		<a href="#" id='more_regist'>Еще &#9660;</a>
+		                    		<div class='regist_methods'>
+		                    			Some text Some text Some text
+		                    		</div>
+		                    	</div>
 		                    	<div class="after-login-div">
 		                    	Уже с нами?
 		                    	<input type="submit" id="btn-login" class="btn btn-custom btn-lg " value="Войдите">

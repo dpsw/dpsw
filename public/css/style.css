@@ -749,3 +749,25 @@ body {
 	background-color: #FFCC66;
 	color: #000;
 }
+
+/* MORE REGISTRATION METHOD*/
+#more_regist{
+	color: #fff;
+	text-decoration: none;
+}
+
+#more_regist:hover{
+	text-decoration: none;
+}
+
+#more_regist:focus{
+	outline: none;
+}
+
+.more_regist_methods{
+	padding-top: 7px;
+}
+
+.regist_methods{
+	display: none;
+}
