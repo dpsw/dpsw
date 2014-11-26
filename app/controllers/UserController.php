@@ -27,14 +27,19 @@ class UserController extends ControllerBase
                     'email' => $this->request->getPost('email'),
                     'password' => $this->security->hash($this->request->getPost('password'))
                 ));
-                if ($user->save()) {
-                    echo 'regist';
-                    die();
+                if ($user->save()) {        
+                    return $this->response->redirect('user/afterregist');
                 }
                 $this->flash->error($user->getMessages());
             }
         }
         return $this->response->redirect('');
+
+    }
+
+    public function afterregistAction()
+    {
+
     }
 
 }

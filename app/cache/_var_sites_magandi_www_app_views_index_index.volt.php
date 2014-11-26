@@ -37,7 +37,7 @@
 	
 	<!-- === MAIN Background === -->
 	<div class="slide story" id="slide-1" data-slide="1">
-		{{ this.flash.output() }}
+		<?php echo $this->flash->output(); ?>
 		<div class="container">
 			<div id="home-row-1" class="row clearfix">
 				<div class="col-6">
@@ -49,45 +49,40 @@
 				<div class="col-5">
 					<div class="form-wrap form_login">
 						<h4 class="font-thin login-header-align">Вступайте в <span >наш клуб</span></h4>  
-						{{ form('user/registration', 'method': 'post', 'id' : 'login-form') }}
+						<?php echo $this->tag->form(array('user/registration', 'method' => 'post', 'id' => 'login-form')); ?>
 
 		                    <!--form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off"-->
 
 		                        <div class="form-group">
-								{{ regist_form.render('username', [
-										'type': 'name',
-										'placeholder': 'Ваше имя',
-										'id': 'name',
-										'class': 'form-control'
-										]) 
-									}}		
+		                        <?php echo $regist_form->render("username", array(
+									    'type' => 'name',
+									    'placeholder' => 'Ваше имя',
+									    'id' => 'name',
+									    'class'	=> 'form-control'
+									)) ?>
 		                            <!-- <input type="name" name="name" id="name" class="form-control" placeholder="Ваше имя"> -->
 		                        </div>
 		                        <div class="form-group">
-								{{ regist_form.render('email', [
-										'type': 'email',
-										'placeholder': 'Email',
-										'id': 'email',
-										'class': 'form-control'
-										]) 
-									}}	
+			                        <?php echo $regist_form->render("email", array(
+									    'type' => 'email',
+									    'placeholder' => 'Email',
+									    'id' => 'email',
+									    'class'	=> 'form-control'
+									)) ?>
 		                            <!-- <input type="email" name="email" id="email" class="form-control" placeholder="Email"> -->
 		                        </div>
 		                        <div class="form-group">
-								{{ regist_form.render('password', [
-										'type': 'password',
-										'placeholder': 'Пароль',
-										'id': 'password',
-										'class': 'form-control'
-										]) 
-									}}	
+		                        <?php echo $regist_form->render("password", array(
+									    'type' => 'password',
+									    'placeholder' => 'Пароль',
+									    'id' => 'password',
+									    'class'	=> 'form-control'
+									)) ?>
 		                            <!-- <input type="password" name="password" id="password" class="form-control" placeholder="Пароль"> -->
 		                        </div>
+		                        <?php // echo $regist_form->render("csrf") ?>	
 
-{#		                        <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
-		                                value="<?php echo $this->security->getToken() ?>"/>
-		                                #}
-                                {{ regist_form.render('csrf', ['value': security.getSessionToken()]) }}
+                                <?php echo $regist_form->render('csrf', array('value' => $this->security->getToken())); ?>
 		                        <button type="submit" id="btn-registration" class="btn btn-custom btn-lg btn-block" >Зарегестрироваться
 		                        </button>
 		                    </form>

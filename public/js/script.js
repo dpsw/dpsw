@@ -5,6 +5,14 @@ $(document).ready(function(e) {
 		$('#login-form').submit();
 	});
 
+	$("#more_regist").on("click", function (event) {
+	   $('.regist_methods').slideToggle(800)
+	});
+	
+	// $(document).on("click", function (event) {
+	//    if ($(".sf-field").has(event.target).length === 0) $(".stfilters + .info-bubble").slideUp(500);
+	// });
+
 	//		NOT MY JS
 	$('.with-hover-text, .regular-link').click(function(e){
 		e.stopPropagation();
