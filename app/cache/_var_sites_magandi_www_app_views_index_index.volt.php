@@ -54,42 +54,28 @@
 		                    <!--form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off"-->
 
 		                        <div class="form-group">
-		                        <?php echo $regist_form->render("username", array(
-									    'type' => 'name',
-									    'placeholder' => 'Ваше имя',
-									    'id' => 'name',
-									    'class'	=> 'form-control'
-									)) ?>
+								<?php echo $regist_form->render('username', array('type' => 'name', 'placeholder' => 'Ваше имя', 'id' => 'name', 'class' => 'form-control')); ?>		
 		                            <!-- <input type="name" name="name" id="name" class="form-control" placeholder="Ваше имя"> -->
 		                        </div>
 		                        <div class="form-group">
-			                        <?php echo $regist_form->render("email", array(
-									    'type' => 'email',
-									    'placeholder' => 'Email',
-									    'id' => 'email',
-									    'class'	=> 'form-control'
-									)) ?>
+								<?php echo $regist_form->render('email', array('type' => 'email', 'placeholder' => 'Email', 'id' => 'email', 'class' => 'form-control')); ?>	
 		                            <!-- <input type="email" name="email" id="email" class="form-control" placeholder="Email"> -->
 		                        </div>
 		                        <div class="form-group">
-		                        <?php echo $regist_form->render("password", array(
-									    'type' => 'password',
-									    'placeholder' => 'Пароль',
-									    'id' => 'password',
-									    'class'	=> 'form-control'
-									)) ?>
+								<?php echo $regist_form->render('password', array('type' => 'password', 'placeholder' => 'Пароль', 'id' => 'password', 'class' => 'form-control')); ?>	
 		                            <!-- <input type="password" name="password" id="password" class="form-control" placeholder="Пароль"> -->
 		                        </div>
-		                        <?php // echo $regist_form->render("csrf") ?>	
 
-                                <?php echo $regist_form->render('csrf', array('value' => $this->security->getToken())); ?>
+
+                                <?php echo $regist_form->render('csrf', array('value' => $this->security->getSessionToken())); ?>
 		                        <button type="submit" id="btn-registration" class="btn btn-custom btn-lg btn-block" >Зарегестрироваться
 		                        </button>
 		                    </form>
 		                    	<div class="more_regist_methods">
 		                    		<a href="#" id='more_regist'>Еще &#9660;</a>
 		                    		<div class='regist_methods'>
-		                    			Some text Some text Some text
+			                    		<a href="<?php echo $facebook_url; ?>" > Facebook</a>
+
 		                    		</div>
 		                    	</div>
 		                    	<div class="after-login-div">

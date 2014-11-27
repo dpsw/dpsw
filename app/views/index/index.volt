@@ -94,7 +94,8 @@
 		                    	<div class="more_regist_methods">
 		                    		<a href="#" id='more_regist'>Еще &#9660;</a>
 		                    		<div class='regist_methods'>
-		                    			Some text Some text Some text
+			                    		<a href="{{ facebook_url }}" > Facebook</a>
+
 		                    		</div>
 		                    	</div>
 		                    	<div class="after-login-div">

@@ -1,5 +1,4 @@
 <?php
-
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Mvc\View;
 use Phalcon\Crypt;
@@ -105,3 +104,24 @@ $di->set('flash', function () {
         'warning' => 'flash-message warning',
     ));
 });
+
+
+$di->set('facebook', function() use ($config){
+
+   $facebook = new Facebook(
+   array(
+
+       'appId' => '1510038829249792',
+       'secret' => '8ac38481d51c63719d4ca6af52ffeab1'
+
+      ));
+
+    $scope = 'user_status,email,publish_actions,offline_access,read_friendlists,status_update,user_birthday';
+
+    $fb = new FacebookLibrary($facebook,$scope);
+    return $fb;
+});
+
+// FACEBOOK
+//FacebookSession::setDefaultApplication('1510038829249792', '8ac38481d51c63719d4ca6af52ffeab1');
+//FacebookSession::setDefaultApplication('1510038829249792', '8ac38481d51c63719d4ca6af52ffeab1');

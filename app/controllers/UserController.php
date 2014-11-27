@@ -42,5 +42,11 @@ class UserController extends ControllerBase
 
     }
 
+    public function afterfacebookregistAction()
+    {
+        print_r($this->facebook->fbLogin());
+        die();
+    }
+
 }
 
