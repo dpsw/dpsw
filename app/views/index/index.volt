@@ -13,7 +13,7 @@
 				<ul class="nav row">
 					<li data-slide="1" class="col-12 col-sm-2"><a id="menu-link-1" href="#slide-1" title="Next Section"><span class="icon icon-home"></span> <span class="text">Домашняя</span></a></li>
 					<li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">О нас</span></a></li>
-					<li data-slide="3" class="col-12 col-sm-2"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-heart"></span> <span class="text">Наши клиенты</span></a></li>
+					<li data-slide="3" class="col-12 col-sm-2"><a id="menu-link-3" href="#slide-3" title="Next Section"><span class="icon icon-heart"></span> <span class="text">Наше будущее</span></a></li>
 					<li data-slide="4" class="col-12 col-sm-2"><a id="menu-link-4" href="#slide-4" title="Next Section"><span class="icon icon-gears"></span> <span class="text">Работа</span></a></li>
 					<li data-slide="5" class="col-12 col-sm-2"><a id="menu-link-5" href="#slide-5" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">Наши клиенты</span></a></li>
 					<li data-slide="6" class="col-12 col-sm-2"><a id="menu-link-6" href="#slide-6" title="Next Section"><span class="icon icon-envelope"></span> <span class="text">Контакты</span></a></li>
@@ -51,8 +51,6 @@
 						<h4 class="font-thin login-header-align">Вступайте в <span >наш клуб</span></h4>  
 						{{ form('user/registration', 'method': 'post', 'id' : 'login-form') }}
 
-		                    <!--form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off"-->
-
 		                        <div class="form-group">
 								{{ regist_form.render('username', [
 										'type': 'name',
@@ -61,7 +59,6 @@
 										'class': 'form-control'
 										]) 
 									}}		
-		                            <!-- <input type="name" name="name" id="name" class="form-control" placeholder="Ваше имя"> -->
 		                        </div>
 		                        <div class="form-group">
 								{{ regist_form.render('email', [
@@ -71,7 +68,6 @@
 										'class': 'form-control'
 										]) 
 									}}	
-		                            <!-- <input type="email" name="email" id="email" class="form-control" placeholder="Email"> -->
 		                        </div>
 		                        <div class="form-group">
 								{{ regist_form.render('password', [
@@ -81,21 +77,25 @@
 										'class': 'form-control'
 										]) 
 									}}	
-		                            <!-- <input type="password" name="password" id="password" class="form-control" placeholder="Пароль"> -->
 		                        </div>
 
 {#		                        <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
 		                                value="<?php echo $this->security->getToken() ?>"/>
 		                                #}
                                 {{ regist_form.render('csrf', ['value': security.getSessionToken()]) }}
+
 		                        <button type="submit" id="btn-registration" class="btn btn-custom btn-lg btn-block" >Зарегестрироваться
 		                        </button>
 		                    </form>
 		                    	<div class="more_regist_methods">
-		                    		<a href="#" id='more_regist'>Еще &#9660;</a>
+		                    		<a href="#" id='more_regist'>Еще можно зарегестрироваться через &#9660;</a>
 		                    		<div class='regist_methods'>
-			                    		<a href="{{ facebook_url }}" > Facebook</a>
-
+										<a href='{{ facebook_url }}' class="btn btn-block btn-social btn-facebook">
+										    <i class="fa fa-facebook"></i> Facebook
+									  	</a>	
+										<a href='{{ vk_url }}' class="btn btn-block btn-social btn-vk">
+										    <i class="fa fa-vk"></i> ВКонтакте
+									  	</a>	
 		                    		</div>
 		                    	</div>
 		                    	<div class="after-login-div">
@@ -105,11 +105,11 @@
 		        	    </div>
 				</div><!-- /col-12 -->
 			</div><!-- /row -->
-			<!--div id="home-row-2" class="row clearfix">
+{#			<!--div id="home-row-2" class="row clearfix">
 				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="4"><img src="images/s02.png"></div><span>PROFESSIONAL</span></div>
 				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="3"><img src="images/s01.png"></div><span>FRIENDLY</span></div>
 				<div class="col-12 col-sm-4"><div class="home-hover navigation-slide" data-slide="5"><img src="images/s03.png"></div><span>SUITABLE</span></div>
-			</div><!-- /row -->
+			</div><!-- /row --> #}
 		</div><!-- /container -->
 	</div><!-- /slide1 -->
 	
@@ -172,14 +172,14 @@
 	<div class="slide story" id="slide-4" data-slide="4">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin">See us <span class="font-semibold">at work</span></div>
+				<div class="col-12 font-thin">Наша <span class="font-semibold">работа</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</div>
+				<div class="col-12 col-sm-10 font-light">Мы создаем инновацию в среде интернет-маркетинга и продаж. Мы не агрегатор. Мы нечто большее.</div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row content-row">
@@ -218,17 +218,17 @@
 	<div class="slide story" id="slide-5" data-slide="5">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin"><span class="font-semibold">Clients</span> we’ve worked with</div>
+				<div class="col-12 font-thin"><span class="font-semibold">Наши</span> клиенты</div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. <br/><br/> The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero.</div>
+				<div class="col-12 col-sm-10 font-light">В данный момент мы создаем наше приложение, <br>поэтому клиентов у нас нет... <br><br>Но в ближайшее время мы планируем привлечь большое количество продавцов и покупателей. </div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
-			<div class="row content-row">
+{#			<!--div class="row content-row">
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-2"><img src="images/client01.png" alt=""></div>
 				<div class="col-12 col-sm-2"><img src="images/client02.png" alt=""></div>
@@ -236,7 +236,7 @@
 				<div class="col-12 col-sm-2"><img src="images/client04.png" alt=""></div>
 				<div class="col-12 col-sm-2"><img src="images/client05.png" alt=""></div>
 				<div class="col-1 col-sm-1 hidden-sm">&nbsp;</div>
-			</div><!-- /row -->
+			</div--><!-- /row --> #}
 		</div><!-- /container -->
 	</div><!-- /slide5 -->
 	
@@ -244,37 +244,37 @@
 	<div class="slide story" id="slide-6" data-slide="6">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-light">Leave us a <span class="font-semibold">message</span></div>
+				<div class="col-12 font-light">Наши <span class="font-semibold">контакты</span></div>
 			</div><!-- /row -->
 			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
-				<div class="col-12 col-sm-10 font-light">You can find us literally anywhere, just push a button and we’re there</div>
+				<div class="col-12 col-sm-10 font-light">По всем вопросам и предложеням обращаться:</div>
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->
 			<div id="contact-row-4" class="row">
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-phone"></i></a></p>
-					<span class="hover-text font-light ">+44 4839-4343</span></a>
+					<span class="hover-text font-light ">+7-988-542-08-43</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-envelope"></i></a></p>
-					<span class="hover-text font-light ">munter@blacktie.co</span></a>
+					<span class="hover-text font-light ">admin@<br>magandi.me</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-home"></i></a></p>
-					<span class="hover-text font-light ">London, England<br>zip code 98443</span></a>
+					<span class="hover-text font-light ">Таганрог, Россия</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
 					<p><a target="_blank" href="#"><i class="icon icon-facebook"></i></a></p>
-					<span class="hover-text font-light ">facebook/blacktie_co</span></a>
+					<span class="hover-text font-light ">facebook.com/<br>magandi</span></a>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2 with-hover-text">
-					<p><a target="_blank" href="#"><i class="icon icon-twitter"></i></a></p>
-					<span class="hover-text font-light ">@BlackTie_co</span></a>
+					<p><a target="_blank" href="#"><i class="icon icon-vk"></i></a></p>
+					<span class="hover-text font-light ">vk.com/<br>magandi</span></a>
 				</div><!-- /col12 -->
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->

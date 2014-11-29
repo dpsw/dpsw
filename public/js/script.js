@@ -8,6 +8,10 @@ $(document).ready(function(e) {
 	$("#more_regist").on("click", function (event) {
 	   $('.regist_methods').slideToggle(800)
 	});
+
+	$('a').click(function(event){
+		event.stopPropagation();
+	});
 	
 	// $(document).on("click", function (event) {
 	//    if ($(".sf-field").has(event.target).length === 0) $(".stfilters + .info-bubble").slideUp(500);

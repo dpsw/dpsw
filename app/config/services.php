@@ -116,7 +116,7 @@ $di->set('facebook', function() use ($config){
 
       ));
 
-    $scope = 'user_status,email,publish_actions,offline_access,read_friendlists,status_update,user_birthday';
+    $scope = 'user_status,email,publish_actions,offline_access';
 
     $fb = new FacebookLibrary($facebook,$scope);
     return $fb;

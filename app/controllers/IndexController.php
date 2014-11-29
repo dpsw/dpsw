@@ -14,9 +14,21 @@ class IndexController extends ControllerBase
             new RegistForm()
         );
         $this->view->setVar("facebook_url", 
-            $this->facebook->facebookLoginURL('http://magandi.local/user/afterfacebookregist')
+            $this->facebook->facebookLoginURL(urldecode('http://magandi.local/user/afterfacebookregist'))
         );
-           
+        $url = 'https://oauth.vk.com/authorize';
+
+        $params = array(
+            'client_id'     => '4655868',
+            'scope'         => 'email,status',
+            'redirect_uri'  => 'http://magandi.local/user/aftervkregist',
+            'response_type' => 'code',
+            'v'             => '5.27'
+        );
+
+        $vk_regist_url = $url . '?' . urldecode(http_build_query($params));
+        $this->view->setVar("vk_url", $vk_regist_url
+        );   
     }
 
 }
