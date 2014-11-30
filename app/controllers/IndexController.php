@@ -27,8 +27,7 @@ class IndexController extends ControllerBase
         );
 
         $vk_regist_url = $url . '?' . urldecode(http_build_query($params));
-        $this->view->setVar("vk_url", $vk_regist_url
-        );   
+        $this->view->setVar("vk_url", $vk_regist_url);   
     }
 
 }

@@ -28,6 +28,7 @@ class UserController extends ControllerBase
                     'password' => $this->security->hash($this->request->getPost('password'))
                 ));
                 if ($user->save()) {        
+                    $this->view->setVar("user_name", $this->request->getPost('username')); 
                     return $this->response->redirect('user/afterregist');
                 }
                 $this->flash->error($user->getMessages());
@@ -44,8 +45,22 @@ class UserController extends ControllerBase
 
     public function afterfacebookregistAction()
     {
-        print_r($this->facebook->fbLogin());
-        die();
+        $fb_user = $this->facebook->fbLogin();
+        // var_dump($fb_user);
+        // die();
+        $user = new User();
+        $user->assign(array(
+            'name' => $fb_user['first_name'],
+            'surname' => $fb_user['last_name'],
+            'email' => $fb_user['email'],
+            'facebook_id' => $fb_user['id'],
+        ));
+        if ($user->save()) {
+            $this->view->setVar("user_name", $fb_user['first_nsame']);         
+            return $this->response->redirect('user/afterregist');
+        }
+        $this->flash->error($user->getMessages());
+        return $this->response->redirect('');
     }
 
     public function aftervkregistAction()
