@@ -6,7 +6,14 @@ $(document).ready(function(e) {
 	});
 
 	$("#more_regist").on("click", function (event) {
-	   $('.regist_methods').slideToggle(800)
+		$("html, body").animate({
+		           scrollTop: $($(this).attr("href")).offset().top + "px"
+		       }, {
+		           duration: 800
+		       });
+
+	    $('.regist_methods').slideToggle(800)
+   		return false;
 	});
 
 	$('a').click(function(event){

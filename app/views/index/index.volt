@@ -88,7 +88,7 @@
 		                        </button>
 		                    </form>
 		                    	<div class="more_regist_methods">
-		                    		<a href="#" id='more_regist'>Еще можно зарегестрироваться через &#9660;</a>
+		                    		<a href="#slide-1" id='more_regist'>Еще можно зарегестрироваться через &#9660;</a>
 		                    		<div class='regist_methods'>
 										<a href='{{ facebook_url }}' class="btn btn-block btn-social btn-facebook">
 										    <i class="fa fa-facebook"></i> Facebook
@@ -98,10 +98,12 @@
 									  	</a>	
 		                    		</div>
 		                    	</div>
+		                    	{#
 		                    	<div class="after-login-div">
 		                    	Уже с нами?
 		                    	<input type="submit" id="btn-login" class="btn btn-custom btn-lg " value="Войдите">
 		                    	</div>
+		                    	#}
 		        	    </div>
 				</div><!-- /col-12 -->
 			</div><!-- /row -->
