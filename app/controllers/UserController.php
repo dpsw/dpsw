@@ -139,7 +139,7 @@ class UserController extends ControllerBase
     {
         $client_id = '4655868';
         $clientSecret = 'keYT9yc8H7OP9N0OZ96v';
-        $redirect_uri = 'http://magandi.local/user/aftervkregist'; 
+        $redirect_uri = $this->getUrl.'/user/aftervkregist'; 
         $code = $this->request->get('code');
 
         if ($code) {
