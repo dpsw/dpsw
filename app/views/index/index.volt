@@ -119,34 +119,38 @@
 	<div class="slide story" id="slide-2" data-slide="2">
 		<div class="container">
 			<div class="row title-row">
-				<div class="col-12 font-thin">Contrary to popular belief, <span class="font-semibold">Lorem Ipsum</span> is not simply random text.</div>
+				<div class="col-12 font-thin">Мы создаем, <span class="font-semibold">Magandi</span> что бы упростить ваш поход в магазин.</div>
 			</div><!-- /row -->
-			<div class="row line-row">
+{#			<div class="row line-row">
 				<div class="hr">&nbsp;</div>
 			</div><!-- /row -->
 			<div class="row subtitle-row">
-				<div class="col-12 font-thin">This is what <span class="font-semibold">we do best</span></div>
+				<div class="col-12 font-thin">Это лишь малая часть того, что <span class="font-semibold">мы делаем</span></div>
 			</div><!-- /row -->
+			#}
 			<div class="row content-row">
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-eye-open"></i></p>
-					<h2 class="font-thin">Visual <span class="font-semibold">Identity</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h2 class="font-thin">Простота <span class="font-semibold">Использования</span></h2>
+					<h4 class="font-thin">Интуитивно-понятный интерфейс направит вас на нужный Вам путь.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-laptop"></i></p>
-					<h2 class="font-thin">Web <span class="font-semibold">Design</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h2 class="font-thin">Новый <span class="font-semibold">Дизайн</span></h2>
+					<br>
+					<h4 class="font-thin">Красота и плавность во всем.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-tablet"></i></p>
-					<h2 class="font-thin">Mobile <span class="font-semibold">Apps</span></h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h2 class="font-thin">Смотри на <span class="font-semibold">Всем</span></h2>
+					<br>
+					<h4 class="font-thin">Мы создаем Magandi, что бы Вам было удобно смотреть Нас на любом устройтстве.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-pencil"></i></p>
-					<h2 class="font-semibold">Development</h2>
-					<h4 class="font-thin">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+					<h2 class="font-thin">Мы <span class="font-semibold">Меняемся</span></h2>
+					<br>
+					<h4 class="font-thin">Мы принимаем и учитываем все Ваши пожелания, анализируем их и исполняем.</h4>
 				</div><!-- /col12 -->
 			</div><!-- /row -->
 		</div><!-- /container -->
@@ -188,28 +192,33 @@
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-bolt"></i></p>
-					<h2 class="font-thin">Listening to<br><span class="font-semibold" >your needs</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h3 class="font-thin">Мощность<br><span class="font-semibold" >Предложения</span></h3>
+					<br>
+					<h4 class="font-thin">Уникальная система Предложенных товаров расскажет о Вашем товаре. </h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cog"></i></p>
-					<h2 class="font-thin">Project<br><span class="font-semibold">discovery</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h3 class="font-thin">Мощность<br><span class="font-semibold">Разработки</span></h3>
+					<br>
+					<h4 class="font-thin">Мы хотим предоставить Вам достаточно мощную и гибкую систему продаж Вашего товара.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cloud"></i></p>
-					<h2 class="font-thin">Storming<br><span class="font-semibold">our brains</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h3 class="font-thin">Скорость <br><span class="font-semibold">Работы</span></h3>
+					<br>
+					<h4 class="font-thin">Скорость работы Нашего сервиса Вас приятно удивит.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-map-marker"></i></p>
-					<h2 class="font-thin">Getting<br><span class="font-semibold">there</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h3 class="font-thin">Покажите<br><span class="font-semibold">Где</span></h3>
+					<br>
+					<h4 class="font-thin">Расскажите где можно приобрести Ваш товар на карте и Покупатель узнает о Вас.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-gift"></i></p>
-					<h2 class="font-thin">Delivering<br><span class="font-semibold">the product</span></h2>
-					<h4 class="font-thin">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4>
+					<h3 class="font-thin">Дарите<br><span class="font-semibold">Подарки</span></h3>
+					<br>
+					<h4 class="font-thin">Увеличивайте конверсию приятными поощрениями.</h4>
 				</div><!-- /col12 -->
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 			</div><!-- /row -->

@@ -123,6 +123,11 @@ $di->set('facebook', function() use ($config){
     return $fb;
 });
 
+$di->set('getUrl', function() use ($config){
+
+    return $config->application->baseUrl;
+});
+
 // FACEBOOK
 //FacebookSession::setDefaultApplication('1510038829249792', '8ac38481d51c63719d4ca6af52ffeab1');
 //FacebookSession::setDefaultApplication('1510038829249792', '8ac38481d51c63719d4ca6af52ffeab1');
