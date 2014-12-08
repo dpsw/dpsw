@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.40, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.38, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: magandi
 -- ------------------------------------------------------
--- Server version	5.5.40-0ubuntu0.14.04.1
+-- Server version	5.5.38-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -104,6 +104,7 @@ CREATE TABLE `User` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `surname` varchar(45) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   `vk_id` varchar(45) DEFAULT NULL,
   `facebook_id` varchar(45) DEFAULT NULL,
@@ -115,7 +116,7 @@ CREATE TABLE `User` (
   `timestamp` timestamp NULL DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +125,6 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'Test','Test','test@test.com',NULL,NULL,NULL,NULL,NULL,'2014-11-21 12:23:10',NULL,NULL,NULL),(2,'Test','Test','test@test.com',NULL,NULL,NULL,NULL,NULL,'2014-11-21 12:52:35',NULL,NULL,NULL),(3,'Test','Test','test@test.com',NULL,NULL,NULL,'Y',NULL,'2014-11-21 13:12:19',NULL,NULL,NULL),(4,'also','Also',NULL,NULL,NULL,NULL,NULL,NULL,'2014-11-21 13:43:39',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-21 17:00:42
+-- Dump completed on 2014-12-08  9:09:07
