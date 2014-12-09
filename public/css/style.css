@@ -728,8 +728,12 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857;
-    width: 70%;
-    margin-left: 15%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius:6px; 
+    -webkit-border-radius:6px; 
+    -moz-border-radius:5px; 
+    -khtml-border-radius:10px;
 }
 
 .flash-message.success{
@@ -738,8 +742,8 @@ body {
 }
 
 .flash-message.error{
-	background-color: #F82942;
-	color: #1D0707;
+	background-color: #E75C5C;;
+	color: #FFF6F7;
 }
 
 .flash-message.notice{
