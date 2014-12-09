@@ -192,13 +192,13 @@
 				<div class="col-sm-1 hidden-sm">&nbsp;</div>
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-bolt"></i></p>
-					<h3 class="font-thin">Мощность<br><span class="font-semibold" >Предложения</span></h3>
+					<h3 class="font-thin">Мы <br><span class="font-semibold" >Покажем</span></h3>
 					<br>
 					<h4 class="font-thin">Уникальная система Предложенных товаров расскажет о Вашем товаре. </h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-sm-2">
 					<p><i class="icon icon-cog"></i></p>
-					<h3 class="font-thin">Мощность<br><span class="font-semibold">Разработки</span></h3>
+					<h3 class="font-thin">Мы<br><span class="font-semibold">Настроим</span></h3>
 					<br>
 					<h4 class="font-thin">Мы хотим предоставить Вам достаточно мощную и гибкую систему продаж Вашего товара.</h4>
 				</div><!-- /col12 -->
