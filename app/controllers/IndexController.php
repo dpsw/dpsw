@@ -14,14 +14,14 @@ class IndexController extends ControllerBase
             new RegistForm()
         );
         $this->view->setVar("facebook_url", 
-            $this->facebook->facebookLoginURL(urldecode('http://magandi.local/user/afterfacebookregist'))
+            $this->facebook->facebookLoginURL(urldecode($this->getUrl.'/user/afterfacebookregist'))
         );
         $url = 'https://oauth.vk.com/authorize';
 
         $params = array(
             'client_id'     => '4655868',
             'scope'         => 'email,status',
-            'redirect_uri'  => 'http://magandi.local/user/aftervkregist',
+            'redirect_uri'  => $this->getUrl.'/user/aftervkregist',
             'response_type' => 'code',
             'v'             => '5.27'
         );

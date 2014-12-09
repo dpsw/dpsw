@@ -59,7 +59,8 @@ $di->set('db', function () use ($config) {
         'host' => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
-        'dbname' => $config->database->dbname
+        'dbname' => $config->database->dbname,
+        'charset' => 'utf8'
     ));
 });
 
@@ -120,6 +121,11 @@ $di->set('facebook', function() use ($config){
 
     $fb = new FacebookLibrary($facebook,$scope);
     return $fb;
+});
+
+$di->set('getUrl', function() use ($config){
+
+    return $config->application->baseUrl;
 });
 
 // FACEBOOK

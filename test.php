@@ -22,6 +22,8 @@ class test{
 
 
 try{
+/////////////////////
+
 $cart = Mage::getModel('checkout/cart')->getQuote();
 $_skuBig = 'ADDSHIP6';
 $_catalog = Mage::getModel('catalog/product');
@@ -39,6 +41,15 @@ foreach ($cart->getAllItems() as $item) {
 $country = $data['country_id'];
 if($country === 'CA'){
 
+=======
+
+$update_card = false;
+
+foreach ($cart->getAllItems() as $item) {
+    $exemptProductsSku[] = $item->getProduct()->getSku();
+}
+
+if($this->getEstimateCountryId() === 'CA'){
         $flag_big_product = in_array('URHMST-1P', $exemptProductsSku);
         if( $flag_big_product )
         {
@@ -56,6 +67,9 @@ if($country === 'CA'){
             }    
         }
 
+            }
+    
+        }
         if($flag_big_product === false)
         {
             if(!in_array($_skuSmall, $exemptProductsSku))
@@ -93,7 +107,6 @@ if($country === 'US')
         $update_card = true;      
     }
 }
-
 if($update_card)
 {
     $cart_2->save();

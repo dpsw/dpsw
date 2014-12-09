@@ -17,7 +17,7 @@ return new \Phalcon\Config(array(
         'libraryDir'     => __DIR__ . '/../../app/library/',
         'cacheDir'       => __DIR__ . '/../../app/cache/',
         'baseUri'        => '/',
-        'basUrl'         => 'magandi.local',
+        'baseUrl'         => 'http://magandi.local',
         'cryptSalt' => 'aEAfR|_&G&a1+vU]:jFr1Qc6?/.1[@DyaIP_2My|:+.u>/6m,$D'
     ),
 ));
