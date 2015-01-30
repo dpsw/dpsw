@@ -98,6 +98,10 @@
 									  	</a>	
 		                    		</div>
 		                    	</div>
+
+								<button type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block btn-login-padding"
+										data-toggle="modal" data-target=".modal-login">Войти
+								</button>
 		                    	{#
 		                    	<div class="after-login-div">
 		                    	Уже с нами?
@@ -132,7 +136,7 @@
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-eye-open"></i></p>
 					<h2 class="font-thin">Простота <span class="font-semibold">Использования</span></h2>
-					<h4 class="font-thin">Интуитивно-понятный интерфейс направит вас на нужный Вам путь.</h4>
+					<h4 class="font-thin">Интуитивно-понятный интерфейс направит Вас на нужный Вам путь.</h4>
 				</div><!-- /col12 -->
 				<div class="col-12 col-lg-3 col-sm-6">
 					<p><i class="icon icon-laptop"></i></p>
@@ -291,5 +295,52 @@
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</div><!-- /Slide 6 -->
+
+	<div class="modal fade modal-login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-login-dialog">
+			<div class="modal-content">
+
+				{{ form('user/login', 'method': 'post') }}
+
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Войти</h4>
+					</div>
+
+					<div class="modal-body">
+
+						<div class="form-group">
+							{{ login_form.render('email', [
+							'type': 'email',
+							'placeholder': 'Email',
+							'id': 'email',
+							'class': 'form-control'
+							])
+							}}
+						</div>
+						<div class="form-group">
+							{{ login_form.render('password', [
+							'type': 'password',
+							'placeholder': 'Пароль',
+							'id': 'password',
+							'class': 'form-control'
+							])
+							}}
+						</div>
+
+						{{ login_form.render('csrf', ['value': security.getSessionToken()]) }}
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+						<button type="submit" class="btn btn-custom" >Войти	</button>
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
 
 

@@ -19,10 +19,10 @@ $(document).ready(function(e) {
 	$('a').click(function(event){
 		event.stopPropagation();
 	});
-	
-	// $(document).on("click", function (event) {
-	//    if ($(".sf-field").has(event.target).length === 0) $(".stfilters + .info-bubble").slideUp(500);
-	// });
+
+	//$('#btn-login').click(function(){
+	//	alert('Hello');
+	//});
 
 	//		NOT MY JS
 	$('.with-hover-text, .regular-link').click(function(e){

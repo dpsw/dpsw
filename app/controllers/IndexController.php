@@ -1,5 +1,6 @@
 <?php
 use Magandi\Forms\RegistForm;
+use Magandi\Forms\LoginForm;
 
 class IndexController extends ControllerBase
 {
@@ -12,6 +13,9 @@ class IndexController extends ControllerBase
         // $this->flash->warning("Your information were stored correctly!");
         $this->view->setVar("regist_form", 
             new RegistForm()
+        );
+        $this->view->setVar("login_form",
+            new LoginForm()
         );
         $this->view->setVar("facebook_url", 
             $this->facebook->facebookLoginURL(urldecode($this->getUrl.'/user/afterfacebookregist'))

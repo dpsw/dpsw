@@ -81,6 +81,23 @@ $di->set('session', function () {
     return $session;
 });
 
+$di->set('dispatcher', function() use ($di) {
+    //Obtain the standard eventsManager from the DI
+// получить стандартный eventsManagerиз DI
+    $eventsManager = $di->getShared('eventsManager');
+    //Instantiate the Security plugin
+// создаем экземпляр плагина безопасности
+    $security = new Phalcon\Security($di);
+    //Listen for events produced in the dispatcher using the Security plugin
+// прослушка для событий созданных в диспетчере, используя плагин безопасности
+    $eventsManager->attach('dispatch', $security);
+    $dispatcher = new Phalcon\Mvc\Dispatcher();
+    //Bind the EventsManager to the Dispatcher
+// связываем EventsManager с Dispatcher
+    $dispatcher->setEventsManager($eventsManager);
+    return $dispatcher;
+});
+
 // $di->set('security', function(){
 
 //     $security = new Phalcon\Security();
@@ -127,6 +144,7 @@ $di->set('getUrl', function() use ($config){
 
     return $config->application->baseUrl;
 });
+
 
 // FACEBOOK
 //FacebookSession::setDefaultApplication('1510038829249792', '8ac38481d51c63719d4ca6af52ffeab1');

@@ -1,6 +1,7 @@
 <?php
 
 use Magandi\Forms\RegistForm;
+use Magandi\Forms\LoginForm;
 use \Phalcon\Db\Column;
 
 class UserController extends ControllerBase
@@ -187,7 +188,7 @@ class UserController extends ControllerBase
                     {
                         if(!$checkUser_by_vk->getEmail())
                         {
-                            $checkUser_by_vk->setEmail($fb_user['email']);    
+                            $checkUser_by_vk->setEmail($user_vk['email']);
                             $checkUser_by_vk->save();
 
                             $this->view->setVar("user_name", $checkUser_by_vk->getName());
@@ -231,6 +232,53 @@ class UserController extends ControllerBase
             $this->flash->error('Не удалось зарегестрироваться с помощью ВКонтакте.');
         }
         return $this->response->redirect('');
+    }
+
+    public function loginAction()
+    {
+        $form = new LoginForm();
+        if ($this->request->isPost()) {
+            if ($form->isValid($this->request->getPost()) == false) {
+                foreach ($form->getMessages() as $message) {
+                    $this->flash->error($message);
+                }
+            }
+            else{
+                $checkUser = User::findFirst(array(
+                    "email = :email: AND email IS NOT NULL",
+                    "bind"      =>  array(
+                        "email" => $this->request->getPost('email'),
+                    ),
+                    "bindTypes" =>  array(
+                        "email" => Column::BIND_PARAM_STR
+                    )
+                ));
+                if($checkUser )
+                {
+                    if( !$this->security->checkHash($this->request->getPost('password'), $checkUser->getPassword()))
+                    {
+                        $this->flash->error('Неверный логин или пароль');
+                        return $this->response->redirect('');
+                    }
+                    $this->_registerSession($checkUser);
+
+//                    $this->session->set('auth', array(
+//                        'id' => $checkUser->getId(),
+//                        'name' => $checkUser->getName()
+//                    ));
+
+                }
+            }
+        }
+        return $this->response->redirect('');
+    }
+
+    private function _registerSession($user)
+    {
+        $this->session->set('auth', array(
+            'id' => $user->getUserId(),
+            'name' => $user->getName()
+        ));
     }
 
 }
