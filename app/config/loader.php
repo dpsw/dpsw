@@ -20,6 +20,7 @@ $loader->registerClasses(
 $loader->registerDirs(
     array(
         $config->application->controllersDir,
-        $config->application->modelsDir
+        $config->application->modelsDir,
+        $config->application->pluginsDir
     )
 )->register();

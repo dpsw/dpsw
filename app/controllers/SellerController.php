@@ -1,10 +1,11 @@
 <?php
 
-class CustomerController extends ControllerUserBase
+class SellerController extends ControllerBase
 {
 
     public function indexAction()
     {
+
     }
 
 }

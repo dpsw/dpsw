@@ -261,11 +261,7 @@ class UserController extends ControllerBase
                         return $this->response->redirect('');
                     }
                     $this->_registerSession($checkUser);
-
-//                    $this->session->set('auth', array(
-//                        'id' => $checkUser->getId(),
-//                        'name' => $checkUser->getName()
-//                    ));
+                    return $this->_redirectUser();
 
                 }
             }
@@ -277,8 +273,40 @@ class UserController extends ControllerBase
     {
         $this->session->set('auth', array(
             'id' => $user->getUserId(),
-            'name' => $user->getName()
+            'name' => $user->getName(),
+            'role'  => $user->getRole()
         ));
+    }
+    private function _redirectUser()
+    {
+        $auth = $this->session->get('auth');
+        if (!$auth)
+        {
+            return $this->response->redirect('');
+        }
+        else{
+            $controller = 'customer';
+            if($auth['role'] === 'seller')
+            {
+                $controller = 'seller';
+            }
+            if($auth['role'] === 'admin')
+            {
+                $controller = 'admin';
+            }
+
+//            return $this->dispatcher->forward(array(
+//                "controller" => $controller,
+//                "action" => "index"
+//            ));
+            return $this->response->redirect($controller.'/index');
+        }
+    }
+
+    public function logoutAction()
+    {
+        $this->session->destroy();
+        return $this->response->redirect('');
     }
 
 }
